@@ -2,13 +2,15 @@ import java.time.LocalDate;
 
 public class Task{
 
+    private int task_id;
     private String description;
-    private String status;
+    private String status = "Ongoing";
     private LocalDate current_date;
     private LocalDate due_date;
 
-    public Task(String description, String status, LocalDate current_date, LocalDate due_Date)
+    public Task(int task_id, String description, String status, LocalDate current_date, LocalDate due_Date)
     {
+        this.task_id = task_id;
         this.description = description;
         this.status = status;
         this.current_date = current_date;
@@ -33,7 +35,15 @@ public class Task{
         return due_date;
     }
 
+    public int gettaskid(){
+        return task_id;
+    }
+
     //Set method
+
+    public void settaskid(int task_id){
+        this.task_id = task_id;
+    }
 
     public void setDescription(String description) {
         this.description = description;
